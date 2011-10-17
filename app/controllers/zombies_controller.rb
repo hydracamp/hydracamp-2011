@@ -3,4 +3,8 @@ class ZombiesController < ApplicationController
     @zombies = Zombie.all
     
   end
+  
+  def show
+    @zombie = Zombie.find(params[:id])
+  end
 end
