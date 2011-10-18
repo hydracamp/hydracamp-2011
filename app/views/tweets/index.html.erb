@@ -13,6 +13,15 @@
       <%= link_to tweet.zombie.name, zombie_path(tweet.zombie) %>
       <%= tweet.status%> -
       <%= tweet.created_at.strftime("%I:%M %p %m/%d/%Y") %>
+
+
+      
+      <span class="zombie_graveyard_label">
+      of <%= tweet.zombie.graveyard %>
+      </span>
+      
+      
+      
     </li>
   <% end%>  
 </ul>
