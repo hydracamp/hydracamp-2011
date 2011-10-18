@@ -13,8 +13,14 @@ class ZombiesController < ApplicationController
   end
   
   def update
-    debugger
-    # @zombie = Zombie.find(params[:id])
+    @zombie = Zombie.find(params[:id])
+    @zombie.update_attributes(params[:zombie])
+    if @zombie.save
+      flash[:notice] = "Saved changes to #{@zombie.name}"
+    else
+      flash[:error] = "Failed to save your changes!"
+    end
+    redirect_to edit_zombie_path(@zombie)
   end
   
   

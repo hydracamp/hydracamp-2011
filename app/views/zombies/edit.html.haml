@@ -1,0 +1,17 @@
+%h1 
+  Name:
+  =@zombie.name
+#page_actions
+  browse | 
+  = link_to "edit", edit_zombie_path(@zombie)
+%dl
+  %dt.name Name:
+  %dd.name= @zombie.name
+  %dt.graveyard 
+    Graveyard:
+  %dd.graveyard
+    = @zombie.graveyard 
+%h2 Tweets:
+%ul
+  - @zombie.tweets.each do |tweet|
+    %li= tweet.status 
