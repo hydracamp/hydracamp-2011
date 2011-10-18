@@ -12,6 +12,20 @@ class ZombiesController < ApplicationController
     @zombie = Zombie.find(params[:id])
   end
   
+  def new
+    @zombie = Zombie.new
+  end
+  
+  def create
+    @zombie = Zombie.new(params[:zombie])
+    if @zombie.save
+      flash[:notice] = "Created #{@zombie.name}"
+    else
+      flash[:error] = "Failed to create your zombie!"
+    end
+    redirect_to zombie_path(@zombie)
+  end
+  
   def update
     @zombie = Zombie.find(params[:id])
     @zombie.update_attributes(params[:zombie])

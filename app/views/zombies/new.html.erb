@@ -1,0 +1,19 @@
+<h1>Create a Zombie</h1>
+
+<%= form_for @zombie do |f| %>
+  <dl>
+    <dt class="name">
+      <%= f.label "Name:" %>
+    </dt>
+    <dd class="name">
+      <%= f.text_field :name %>
+    </dd>
+    <dt class="graveyard">
+      <%= f.label "Graveyard:" %>
+    </dt>
+    <dd class="graveyard">
+      <%= f.text_field :graveyard %>
+    </dd>
+  </dl>
+  <%= f.submit "Create Zombie" %>
+<% end %>
