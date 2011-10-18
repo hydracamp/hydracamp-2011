@@ -6,6 +6,12 @@ class ZombiesController < ApplicationController
   
   def show
     @zombie = Zombie.find(params[:id])
+    
+    respond_to do |format|
+      format.html 
+      format.xml { render :xml => @zombie.to_xml }
+      format.json { render :json => @zombie.to_json }
+    end
   end
   
   def edit
