@@ -1,6 +1,8 @@
 <h1>Name:<%=@zombie.name%></h1>
 <div id="page_actions">
-  browse | <%= link_to "edit", edit_zombie_path(@zombie) %>
+  <% if current_zombie == @zombie %>
+    browse | <%= link_to "edit", edit_zombie_path(@zombie) %>
+  <% end %>
 </div>
 <dl>
   <dt class="name">Name:</dt>
@@ -9,6 +11,9 @@
   <dd class="graveyard"><%= @zombie.graveyard %></dd>
 </dl>
 <h2>Tweets:</h2>
+  <% if current_zombie == @zombie %>
+    <%= link_to "Create a new Tweet", new_zombie_tweet_path(@zombie) %>
+  <% end %>
 <ul>
 <% @zombie.tweets.each do |tweet|%>
 <li><%= tweet.status %></li>
