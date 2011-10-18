@@ -4,6 +4,7 @@
 
 <h2>Everyone's Tweets</h2>
 
+<%= paginate @tweets %>
 <ul>
   <% @tweets.each do |tweet|%>
     <li>
@@ -13,3 +14,4 @@
     </li>
   <% end%>  
 </ul>
+<%= paginate @tweets %>

@@ -7,13 +7,14 @@ gem 'rails', '3.0.10'
 
 gem 'sqlite3'
 gem 'devise'
+gem 'kaminari'
 
 group :test, :development do
   gem "rspec-rails", "~> 2.6"
   gem 'cucumber-rails'
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
-  gem "ruby-debug"
+#  gem "ruby-debug"
 end
 
 # Use unicorn as the web server
