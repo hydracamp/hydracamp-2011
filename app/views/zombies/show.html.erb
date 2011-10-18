@@ -11,9 +11,6 @@
   <dd class="graveyard"><%= @zombie.graveyard %></dd>
 </dl>
 <h2>Tweets:</h2>
-  <% if current_zombie == @zombie %>
-    <%= link_to "Create a new Tweet", new_zombie_tweet_path(@zombie) %>
-  <% end %>
 <ul>
 <% @zombie.tweets.each do |tweet|%>
 <li><%= tweet.status %></li>
