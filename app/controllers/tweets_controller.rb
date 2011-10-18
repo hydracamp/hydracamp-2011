@@ -1,7 +1,7 @@
 class TweetsController < ApplicationController
   
   def index
-    @tweets = Tweet.all_with_latest_first
+    @tweets = Tweet.all_with_latest_first.page(params[:page]).per(10)
     @tweet = Tweet.new()
   end
   
