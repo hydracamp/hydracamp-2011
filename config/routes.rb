@@ -2,6 +2,9 @@ Hydracamp::Application.routes.draw do
   resources :zombies do
     resources :tweets
   end
+  
+  root :to => "zombies#index"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
