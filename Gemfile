@@ -9,6 +9,10 @@ gem 'sqlite3'
 
 group :test, :development do
   gem "rspec-rails", "~> 2.6"
+  gem 'cucumber-rails'
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
+  gem "ruby-debug"
 end
 
 # Use unicorn as the web server
