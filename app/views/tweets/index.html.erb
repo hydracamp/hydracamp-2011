@@ -1,0 +1,15 @@
+<h1>Tweets</h1>
+
+<%= render :partial => "new" %>
+
+<h2>Everyone's Tweets</h2>
+
+<ul>
+  <% @tweets.each do |tweet|%>
+    <li>
+      <%= link_to tweet.zombie.name, zombie_path(tweet.zombie) %>
+      <%= tweet.status%>
+      <%= tweet.created_at %>
+    </li>
+  <% end%>  
+</ul>

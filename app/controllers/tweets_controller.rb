@@ -1,5 +1,10 @@
 class TweetsController < ApplicationController
   
+  def index
+    @tweets = Tweet.order(:created_at).reverse
+    @tweet = Tweet.new()
+  end
+  
   def new
     @zombie = Zombie.find(params[:zombie_id])
     @tweet = Tweet.new()
@@ -14,7 +19,7 @@ class TweetsController < ApplicationController
     else
       flash[:error] = "Failed to create your tweet!"
     end
-    redirect_to zombie_path(@tweet.zombie)
+    redirect_to tweets_path
   end
   
 end

@@ -32,7 +32,8 @@
   <% if current_zombie.nil? %>
     <%= link_to "log in", new_zombie_session_path%>
   <% else %>
-    <%= link_to "my account", edit_zombie_registration_path%>
+    Welcome <%= current_zombie.name %>
+    <%= link_to "edit account", edit_zombie_registration_path%>
     <%= link_to "log out", destroy_zombie_session_path, :method=>:delete %>
   <% end %>
 </div>
