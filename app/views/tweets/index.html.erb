@@ -1,6 +1,8 @@
 <h1>Tweets</h1>
 
-<%= render :partial => "new" %>
+<% if current_zombie != @zombie %>
+  <%= render :partial => "new" %>
+<% end %>
 
 <h2>Everyone's Tweets</h2>
 
