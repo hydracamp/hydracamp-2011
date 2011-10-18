@@ -9,6 +9,7 @@
   <dd class="graveyard"><%= @zombie.graveyard %></dd>
 </dl>
 <h2>Tweets:</h2>
+<%= link_to "Create a new Tweet", new_zombie_tweet_path(@zombie) %>
 <ul>
 <% @zombie.tweets.each do |tweet|%>
 <li><%= tweet.status %></li>

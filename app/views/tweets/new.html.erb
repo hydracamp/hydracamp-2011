@@ -1,0 +1,7 @@
+<h1>What's your Status?</h1>
+
+<%= form_for [@zombie, @tweet] do |f| %>
+  <%= f.label :status %>
+  <%= f.text_field :status %>
+  <%= f.submit "Tweet." %>
+<% end %>
