@@ -1,7 +1,7 @@
 class TweetsController < ApplicationController
   
   def index
-    @tweets = Tweet.order(:created_at).reverse
+    @tweets = Tweet.all_with_latest_first
     @tweet = Tweet.new()
   end
   
