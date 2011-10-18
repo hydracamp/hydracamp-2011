@@ -1,4 +1,6 @@
 Hydracamp::Application.routes.draw do
+  devise_for :zombies
+
   resources :zombies do
     resources :tweets
   end
