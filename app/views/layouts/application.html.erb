@@ -8,6 +8,20 @@
 </head>
 <body>
 
+
+
+<div class="content clearfix">
+  <% if flash[:notice] %>
+    <div class="notice">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+  <% if flash[:error] %>
+    <div class="error">
+      <%= flash[:error] %>
+    </div>
+  <% end %>
+</div>
 <%= yield %>
 
 </body>
