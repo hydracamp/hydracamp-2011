@@ -1,0 +1,28 @@
+<h1>Name:<%=@zombie.name%></h1>
+<div id="page_actions">
+  <%= link_to "browse", zombie_path(@zombie) %> | edit
+</div>
+
+<%= form_for @zombie do |f| %>
+  <dl>
+    <dt class="name">
+      <%= f.label "Name:" %>
+    </dt>
+    <dd class="name">
+      <%= f.text_field :name %>
+    </dd>
+    <dt class="graveyard">
+      <%= f.label "Graveyard:" %>
+    </dt>
+    <dd class="graveyard">
+      <%= f.text_field :graveyard %>
+    </dd>
+  </dl>
+  <%= f.submit "Save Changes" %>
+<% end %>
+<h2>Tweets:</h2>
+<ul>
+<% @zombie.tweets.each do |tweet|%>
+<li><%= tweet.status %></li>
+<% end %>
+</ul>

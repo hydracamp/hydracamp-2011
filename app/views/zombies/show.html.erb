@@ -1,4 +1,13 @@
 <h1>Name:<%=@zombie.name%></h1>
+<div id="page_actions">
+  browse | <%= link_to "edit", edit_zombie_path(@zombie) %>
+</div>
+<dl>
+  <dt class="name">Name:</dt>
+  <dd class="name"><%= @zombie.name %></dd>
+  <dt class="graveyard">Graveyard:</dt>
+  <dd class="graveyard"><%= @zombie.graveyard %></dd>
+</dl>
 <h2>Tweets:</h2>
 <ul>
 <% @zombie.tweets.each do |tweet|%>

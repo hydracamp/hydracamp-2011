@@ -7,4 +7,15 @@ class ZombiesController < ApplicationController
   def show
     @zombie = Zombie.find(params[:id])
   end
+  
+  def edit
+    @zombie = Zombie.find(params[:id])
+  end
+  
+  def update
+    debugger
+    # @zombie = Zombie.find(params[:id])
+  end
+  
+  
 end
