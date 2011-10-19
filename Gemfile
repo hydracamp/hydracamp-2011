@@ -9,6 +9,9 @@ gem 'sqlite3'
 gem 'devise'
 gem 'kaminari'
 
+gem 'jettywrapper'
+gem 'active-fedora'
+
 group :test, :development do
   gem "rspec-rails", "~> 2.6"
   gem 'cucumber-rails'
