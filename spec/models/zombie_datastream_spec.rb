@@ -3,7 +3,6 @@ require 'spec_helper'
 describe ZombieDatastream do
 
   before do
-    ActiveFedora.init
     @ds = ZombieDatastream.from_xml('
       <zombie xmlns="http://mediashelf.com/zombies">
         <body>
