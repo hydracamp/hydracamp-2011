@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Zombie do
   
   before(:each) do
-    @zombie = Zombie.create
+    @zombie = Zombie.create(:email=>"zombietst@example.com", :password=>"1234567", :password_confirm=>"123456")
   end
   
   after(:each) do
