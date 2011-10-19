@@ -1,7 +1,13 @@
 class TweetsController < ApplicationController
   
   def index
-    @tweets = Tweet.page(params[:page]).per(10)
+    if params[:sort] == 'zombie'
+      @tweets = Tweet.ordered_by_zombie_name
+    else
+      @tweets = Tweet.ordered_chronologically
+    end
+
+    @tweets = @tweets.page(params[:page]).per(10)
     @tweet = Tweet.new()
   end
   
