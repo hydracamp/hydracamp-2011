@@ -87,5 +87,10 @@ describe ZombieEaccpfDatastream do
     @ds.cpf_description.identity.name_entry.first_name = 'Shaun'
     @ds.first_name[0].should == 'Shaun'
   end
+  
+  it "should have some default xml" do
+    puts ZombieEaccpfDatastream.new.to_xml
+    ZombieEaccpfDatastream.new.to_xml.should_not be_equivalent_to "<xml></xml>"
+  end
 end
 

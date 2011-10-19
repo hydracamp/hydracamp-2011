@@ -15,5 +15,8 @@ describe Undead do
     @reloaded.pid.should == @undead.pid
     
   end
-
+  
+  it "should have descMetadata" do
+    Undead.new.datastreams["descMetadata"].should_not be_nil
+  end
 end
