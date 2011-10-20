@@ -9,6 +9,8 @@ gem 'sqlite3'
 gem 'devise'
 gem 'kaminari'
 
+gem 'blacklight'
+
 gem 'jettywrapper'
 gem 'active-fedora'
 

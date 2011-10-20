@@ -6,8 +6,8 @@ class ZombieEaccpfDatastream < ActiveFedora::NokogiriDatastream
       t.identity {
         t.name_entry(:path=>'nameEntry') {
           t.part
-          t.first_name(:ref=>[:cpf_description, :identity, :name_entry, :part], :attributes=>{'localType'=>'forename'})
-          t.last_name(:ref=>[:cpf_description, :identity, :name_entry, :part], :attributes=>{'localType'=>'surname'})
+          t.first_name(:ref=>[:cpf_description, :identity, :name_entry, :part], :attributes=>{'localType'=>'forename'},:index_as=>[:searchable, :facetable])
+          t.last_name(:ref=>[:cpf_description, :identity, :name_entry, :part], :attributes=>{'localType'=>'surname'},:index_as=>[:searchable, :facetable])
         }
       }
       t.description {
@@ -17,10 +17,10 @@ class ZombieEaccpfDatastream < ActiveFedora::NokogiriDatastream
               t.date
             }
             t.undeath_chron_item(:path=>"chronItem[oxns:event/text()='died']") {
-              t.date_undeath(:path=>'date')
+              t.date_undeath(:path=>'date',:index_as=>[:searchable, :facetable])
             }
             t.born_chron_item(:path=>"chronItem[oxns:event/text()='Born']") {
-              t.date_born(:path=>'date')
+              t.date_born(:path=>'date',:index_as=>[:searchable, :facetable])
             }
           }
         }
